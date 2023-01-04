@@ -31,10 +31,10 @@ function loadPdf(url) {
 let prefixUrl = "https://files.lcjuves.com";
 
 $(() => {
-  $.get(prefixUrl + "/static/json/books.json", (data, status) => {
+  $.get(prefixUrl + "/json/books.json", (data, status) => {
     if ("success" == status) {
       for (let bookName of data) {
-        let url = `${prefixUrl}/static/pdf/${encodeURIComponent(bookName)}`;
+        let url = `${prefixUrl}/pdf/${encodeURIComponent(bookName)}`;
         $("body main div")
           .append(`<span class="book_content"><img src="${jsDelivrPrefixUrl}/static/img/book_icon.svg"/>
           <a href="javascript:void(0);" onclick="loadPdf('${url}');">《 ${bookName.substring(
@@ -45,7 +45,9 @@ $(() => {
       }
     }
   });
-  $("body header img").attr({ src: `${jsDelivrPrefixUrl}/static/img/book.svg` });
+  $("body header img").attr({
+    src: `${jsDelivrPrefixUrl}/static/img/book.svg`,
+  });
   $("body header span").text("Open Developer Books");
   $("body footer div").text(
     `访问者可将本网站提供的内容或服务用于个人学习、研究或欣赏，以及其他非商业性或非盈利性用途，
