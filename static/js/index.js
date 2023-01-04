@@ -4,7 +4,8 @@
  * @author Liangcheng Juves
  */
 
-let jsDelivrPrefixUrl = "https://cdn.jsdelivr.net/gh/LiangchengJ/odb@2021.1.18";
+// let jsDelivrPrefixUrl = "https://cdn.jsdelivr.net/gh/LiangchengJ/odb@2021.1.18";
+let jsDelivrPrefixUrl = "";
 
 (() => {
   initialize(`Liangcheng Juves' Support Contens`, [
@@ -27,7 +28,7 @@ function loadPdf(url) {
   }, 3000);
 }
 
-let prefixUrl = "https://files.liangchengj.com";
+let prefixUrl = "https://files.lcjuves.com";
 
 $(() => {
   $.get(prefixUrl + "/static/json/books.json", (data, status) => {
