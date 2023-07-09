@@ -36,11 +36,14 @@ $(() => {
       for (let bookName of data) {
         let url = `${prefixUrl}/pdf/${encodeURIComponent(bookName)}`;
         $("body main div")
-          .append(`<span class="book_content"><img src="${jsDelivrPrefixUrl}/static/img/book_icon.svg"/>
+          .append(`<span class="book_content" title="${bookName.substring(
+            0,
+            bookName.lastIndexOf(".")
+          )}"><img src="${jsDelivrPrefixUrl}/static/img/book_icon.svg"/>
           <a href="javascript:void(0);" onclick="loadPdf('${url}');">《 ${bookName.substring(
-          0,
-          bookName.lastIndexOf(".")
-        )} 》</a>
+            0,
+            bookName.lastIndexOf(".")
+          )} 》</a>
         </span>`);
       }
     }
