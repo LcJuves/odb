@@ -196,3 +196,5 @@ gdbserver
 
 .dart_tool/
 odb-web.tar.xz
+.flutter-plugins
+.flutter-plugins-dependencies
