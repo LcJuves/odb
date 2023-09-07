@@ -193,3 +193,6 @@ _MACOSX
 # GDB
 gdb.setup
 gdbserver
+
+.dart_tool/
+odb-web.tar.xz
