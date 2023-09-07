@@ -30,6 +30,8 @@ class BookItemWidget extends StatelessWidget {
           final elem = html.window.document.querySelector(".content");
           elem!.style.display = 'flex';
           js_util.setProperty(html.window.location, "href", url);
+          await Future.delayed(
+              const Duration(seconds: 6), () => elem.style.display = 'none');
 
           // Navigator.of(context).push(MaterialPageRoute(
           //   builder: (context) {
