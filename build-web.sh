@@ -1,7 +1,7 @@
 #!/bin/sh
 
 flutter clean
-flutter build web --web-renderer canvaskit --no-tree-shake-icons --no-web-resources-cdn --release
+flutter build web --web-renderer html --no-tree-shake-icons --no-web-resources-cdn --release
 (
     cd build/web || exit
 

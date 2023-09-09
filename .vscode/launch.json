@@ -7,20 +7,20 @@
     {
       "name": "odb",
       "request": "launch",
-      "toolArgs": ["--web-renderer", "canvaskit", "--no-web-resources-cdn"],
+      "toolArgs": ["--web-renderer", "html", "--no-web-resources-cdn"],
       "type": "dart"
     },
     {
       "name": "odb (profile mode)",
       "request": "launch",
-      "toolArgs": ["--web-renderer", "canvaskit", "--no-web-resources-cdn"],
+      "toolArgs": ["--web-renderer", "html", "--no-web-resources-cdn"],
       "type": "dart",
       "flutterMode": "profile"
     },
     {
       "name": "odb (release mode)",
       "request": "launch",
-      "toolArgs": ["--web-renderer", "canvaskit", "--no-web-resources-cdn"],
+      "toolArgs": ["--web-renderer", "html", "--no-web-resources-cdn"],
       "type": "dart",
       "flutterMode": "release"
     }
