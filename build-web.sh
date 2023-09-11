@@ -1,5 +1,16 @@
 #!/bin/sh
 
+minify_js() {
+    # bun build --minify -l .js:js "$1" --outfile "$1"
+    esbuild --minify --loader=js <"$1" >"$1.out"
+    mv "$1.out" "$1"
+}
+
+minify_css() {
+    esbuild --minify --loader=css <"$1" >"$1.out"
+    mv "$1.out" "$1"
+}
+
 flutter clean
 flutter build web --web-renderer html --no-tree-shake-icons --no-web-resources-cdn --release
 (
@@ -7,31 +18,21 @@ flutter build web --web-renderer html --no-tree-shake-icons --no-web-resources-c
 
     (
         cd css || exit
-        esbuild --minify --loader=css <animation.css >animation.out.css
-        mv animation.out.css animation.css
-        esbuild --minify --loader=css <index.css >index.out.css
-        mv index.out.css index.css
+        minify_css animation.css
+        minify_css index.css
     )
 
-    esbuild --minify --loader=js <animation.js >animation.out.js
-    mv animation.out.js animation.js
-    esbuild --minify --loader=js <flutter_service_worker.js >flutter_service_worker.out.js
-    mv flutter_service_worker.out.js flutter_service_worker.js
-    esbuild --minify --loader=js <flutter.js >flutter.out.js
-    mv flutter.out.js flutter.js
-    esbuild --minify --loader=js <main.dart.js >main.dart.out.js
-    mv main.dart.out.js main.dart.js
+    minify_js animation.js
+    minify_js flutter_service_worker.js
+    minify_js flutter.js
+    minify_js main.dart.js
 
     cd canvaskit || exit
-    esbuild --minify --loader=js <canvaskit.js >canvaskit.out.js
-    mv canvaskit.out.js canvaskit.js
-    esbuild --minify --loader=js <skwasm.js >skwasm.out.js
-    mv skwasm.out.js skwasm.js
-    esbuild --minify --loader=js <skwasm.worker.js >skwasm.worker.out.js
-    mv skwasm.worker.out.js skwasm.worker.js
+    minify_js canvaskit.js
+    minify_js skwasm.js
+    minify_js skwasm.worker.js
 
     cd chromium || exit
-    esbuild --minify --loader=js <canvaskit.js >canvaskit.out.js
-    mv canvaskit.out.js canvaskit.js
+    minify_js canvaskit.js
 )
 tar -cvJf odb-web.tar.xz build/web/**
