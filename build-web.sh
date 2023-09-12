@@ -1,13 +1,27 @@
 #!/bin/sh
 
 minify_js() {
-    # bun build --minify -l .js:js "$1" --outfile "$1"
+    # bun build "$1" --minify-syntax --minify-whitespace --target browser --outfile "$1"
     esbuild --minify --loader=js <"$1" >"$1.out"
     mv "$1.out" "$1"
 }
 
 minify_css() {
     esbuild --minify --loader=css <"$1" >"$1.out"
+    mv "$1.out" "$1"
+}
+
+minify_html() {
+    bunx html-minifier --remove-comments --minify-js esbuild \
+        --minify-css esbuild \
+        --remove-optional-tags --remove-redundant-attributes \
+        --remove-tag-whitespace --collapse-whitespace \
+        --use-short-doctype --remove-script-type-attributes --remove-style-link-type-attributes \
+        "$1" -o "$1"
+}
+
+minify_json() {
+    bun repl -e "console.log(JSON.stringify(require('./$1')))" >"$1.out"
     mv "$1.out" "$1"
 }
 
@@ -22,10 +36,11 @@ flutter build web --web-renderer html --no-tree-shake-icons --no-web-resources-c
         minify_css index.css
     )
 
-    minify_js animation.js
     minify_js flutter_service_worker.js
     minify_js flutter.js
+    minify_html index.html
     minify_js main.dart.js
+    minify_json manifest.json
 
     cd canvaskit || exit
     minify_js canvaskit.js
