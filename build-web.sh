@@ -21,7 +21,7 @@ minify_html() {
 }
 
 minify_json() {
-    bun repl -e "console.log(JSON.stringify(require('./$1')))" >"$1.out"
+    bun repl -e "(async()=>await Bun.write(Bun.stdout,JSON.stringify(require('./$1'))))()" >"$1.out"
     mv "$1.out" "$1"
 }
 
