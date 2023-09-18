@@ -193,3 +193,5 @@ _MACOSX
 # GDB
 gdb.setup
 gdbserver
+
+CNAME
