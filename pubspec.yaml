@@ -46,6 +46,8 @@ dependencies:
   # webview_flutter_android: ^3.9.5
   pdfx: ^2.4.0
   internet_file: ^1.2.0
+  protobuffers:
+    path: third_party/protocolbuffers
 
 dev_dependencies:
   flutter_test:

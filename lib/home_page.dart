@@ -1,7 +1,6 @@
-import 'dart:convert';
-
 import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
+import 'package:protobuffers/books.pb.dart';
 
 import 'book_item_widget.dart';
 import 'bottom_text.dart';
@@ -30,9 +29,8 @@ class BooksContainer extends StatefulWidget {
   Future<List<BookItem>> fetchBookItems(String url) async {
     final response = await http.get(Uri.parse(url));
     if (response.statusCode == 200) {
-      final responseBody = response.body;
-      final items = jsonDecode(responseBody) as List;
-      return items.map((e) => BookItem(e as String)).toList();
+      final books = Books.fromBuffer(response.bodyBytes);
+      return books.bookNameList.map((name) => BookItem(name)).toList();
     } else {
       throw Exception('Failed to load book items');
     }
@@ -48,8 +46,7 @@ class _BooksContainerState extends State<BooksContainer> {
   @override
   void initState() {
     super.initState();
-    fetchBookItems =
-        widget.fetchBookItems("https://files.lcjuves.com/json/books.json");
+    fetchBookItems = widget.fetchBookItems("https://odb.lcjuves.com/books.pb");
   }
 
   @override

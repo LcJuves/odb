@@ -1,0 +1,5 @@
+syntax = "proto3";
+
+message Books {
+    repeated string book_name_list = 1;
+}
