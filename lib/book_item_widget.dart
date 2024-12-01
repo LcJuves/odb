@@ -18,6 +18,7 @@ class BookItem {
 
 class BookItemWidget extends StatelessWidget {
   final BookItem item;
+  static const double edgePadding = 2.5;
   const BookItemWidget({super.key, required this.item});
 
   @override
@@ -26,7 +27,8 @@ class BookItemWidget extends StatelessWidget {
     return InkWell(
       hoverColor: Colors.white,
       borderRadius: BorderRadius.circular(5),
-      overlayColor: WidgetStatePropertyAll(Colors.blueGrey.withOpacity(0.2)),
+      overlayColor:
+          WidgetStatePropertyAll(const Color(0xFF569CD6).withOpacity(0.1)),
       onTap: () async {
         const prefixUrl = "https://files.lcjuves.com";
         final url = "$prefixUrl/pdf/${item.name}";
@@ -49,7 +51,7 @@ class BookItemWidget extends StatelessWidget {
         }
       },
       child: Padding(
-        padding: const EdgeInsets.all(2.2),
+        padding: const EdgeInsets.all(edgePadding),
         child: Row(
           mainAxisSize: MainAxisSize.min,
           children: [
@@ -57,9 +59,9 @@ class BookItemWidget extends StatelessWidget {
               size: const Size.square(18),
               child: SvgPicture.asset("assets/book_icon.svg"),
             ),
-            SizedBox.fromSize(size: const Size.square(5)),
+            SizedBox.fromSize(size: const Size.square(edgePadding)),
             BookItemFlexText(bookName: bookName),
-            SizedBox.fromSize(size: const Size.square(5)),
+            SizedBox.fromSize(size: const Size.square(edgePadding)),
           ],
         ),
       ),
