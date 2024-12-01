@@ -36,11 +36,11 @@
 }
 
 .preloader,
-.preloader__ring {
+.preloader_ring {
   transform-style: preserve-3d;
 }
 
-.preloader__ring {
+.preloader_ring {
   animation-name: spin;
   animation-duration: 4s;
   animation-timing-function: inherit;
@@ -51,11 +51,11 @@
   width: 1.5rem;
 }
 
-.preloader__ring:nth-child(even) {
+.preloader_ring:nth-child(even) {
   animation-direction: reverse;
 }
 
-.preloader__sector {
+.preloader_sector {
   font-weight: 600;
   position: absolute;
   top: 0;
@@ -65,130 +65,130 @@
   transform: translateZ(7rem);
 }
 
-.preloader__sector,
-.preloader__sector:empty:before {
+.preloader_sector,
+.preloader_sector:empty:before {
   display: inline-block;
   width: 100%;
   height: 100%;
 }
 
-.preloader__sector:empty:before {
+.preloader_sector:empty:before {
   content: "";
 }
 
-.preloader__sector:nth-child(2) {
+.preloader_sector:nth-child(2) {
   transform: rotateY(12deg) translateZ(7rem);
 }
 
-.preloader__sector:nth-child(3) {
+.preloader_sector:nth-child(3) {
   transform: rotateY(24deg) translateZ(7rem);
 }
 
-.preloader__sector:nth-child(4) {
+.preloader_sector:nth-child(4) {
   transform: rotateY(36deg) translateZ(7rem);
 }
 
-.preloader__sector:nth-child(5) {
+.preloader_sector:nth-child(5) {
   transform: rotateY(48deg) translateZ(7rem);
 }
 
-.preloader__sector:nth-child(6) {
+.preloader_sector:nth-child(6) {
   transform: rotateY(60deg) translateZ(7rem);
 }
 
-.preloader__sector:nth-child(7) {
+.preloader_sector:nth-child(7) {
   transform: rotateY(72deg) translateZ(7rem);
 }
 
-.preloader__sector:nth-child(8) {
+.preloader_sector:nth-child(8) {
   transform: rotateY(84deg) translateZ(7rem);
 }
 
-.preloader__sector:nth-child(9) {
+.preloader_sector:nth-child(9) {
   transform: rotateY(96deg) translateZ(7rem);
 }
 
-.preloader__sector:nth-child(10) {
+.preloader_sector:nth-child(10) {
   transform: rotateY(108deg) translateZ(7rem);
 }
 
-.preloader__sector:nth-child(11) {
+.preloader_sector:nth-child(11) {
   transform: rotateY(120deg) translateZ(7rem);
 }
 
-.preloader__sector:nth-child(12) {
+.preloader_sector:nth-child(12) {
   transform: rotateY(132deg) translateZ(7rem);
 }
 
-.preloader__sector:nth-child(13) {
+.preloader_sector:nth-child(13) {
   transform: rotateY(144deg) translateZ(7rem);
 }
 
-.preloader__sector:nth-child(14) {
+.preloader_sector:nth-child(14) {
   transform: rotateY(156deg) translateZ(7rem);
 }
 
-.preloader__sector:nth-child(15) {
+.preloader_sector:nth-child(15) {
   transform: rotateY(168deg) translateZ(7rem);
 }
 
-.preloader__sector:nth-child(16) {
+.preloader_sector:nth-child(16) {
   transform: rotateY(180deg) translateZ(7rem);
 }
 
-.preloader__sector:nth-child(17) {
+.preloader_sector:nth-child(17) {
   transform: rotateY(192deg) translateZ(7rem);
 }
 
-.preloader__sector:nth-child(18) {
+.preloader_sector:nth-child(18) {
   transform: rotateY(204deg) translateZ(7rem);
 }
 
-.preloader__sector:nth-child(19) {
+.preloader_sector:nth-child(19) {
   transform: rotateY(216deg) translateZ(7rem);
 }
 
-.preloader__sector:nth-child(20) {
+.preloader_sector:nth-child(20) {
   transform: rotateY(228deg) translateZ(7rem);
 }
 
-.preloader__sector:nth-child(21) {
+.preloader_sector:nth-child(21) {
   transform: rotateY(240deg) translateZ(7rem);
 }
 
-.preloader__sector:nth-child(22) {
+.preloader_sector:nth-child(22) {
   transform: rotateY(252deg) translateZ(7rem);
 }
 
-.preloader__sector:nth-child(23) {
+.preloader_sector:nth-child(23) {
   transform: rotateY(264deg) translateZ(7rem);
 }
 
-.preloader__sector:nth-child(24) {
+.preloader_sector:nth-child(24) {
   transform: rotateY(276deg) translateZ(7rem);
 }
 
-.preloader__sector:nth-child(25) {
+.preloader_sector:nth-child(25) {
   transform: rotateY(288deg) translateZ(7rem);
 }
 
-.preloader__sector:nth-child(26) {
+.preloader_sector:nth-child(26) {
   transform: rotateY(300deg) translateZ(7rem);
 }
 
-.preloader__sector:nth-child(27) {
+.preloader_sector:nth-child(27) {
   transform: rotateY(312deg) translateZ(7rem);
 }
 
-.preloader__sector:nth-child(28) {
+.preloader_sector:nth-child(28) {
   transform: rotateY(324deg) translateZ(7rem);
 }
 
-.preloader__sector:nth-child(29) {
+.preloader_sector:nth-child(29) {
   transform: rotateY(336deg) translateZ(7rem);
 }
 
-.preloader__sector:nth-child(30) {
+.preloader_sector:nth-child(30) {
   transform: rotateY(348deg) translateZ(7rem);
 }
 
