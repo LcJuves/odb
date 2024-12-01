@@ -37,7 +37,6 @@ dependencies:
   flutter_svg: ^2.0.7
   http: ^0.13.4
   url_launcher: ^6.1.14
-  universal_html: ^2.2.3
   # webview_flutter_web:
   #   path: third_party/webview_flutter_web
   # webview_flutter_platform_interface: ^2.5.1
@@ -48,6 +47,7 @@ dependencies:
   internet_file: ^1.2.0
   protobuffers:
     path: third_party/protocolbuffers
+  web: ^1.1.0
 
 dev_dependencies:
   flutter_test:
