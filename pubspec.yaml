@@ -37,12 +37,6 @@ dependencies:
   flutter_svg: ^2.0.7
   http: ^0.13.4
   url_launcher: ^6.1.14
-  # webview_flutter_web:
-  #   path: third_party/webview_flutter_web
-  # webview_flutter_platform_interface: ^2.5.1
-  # webview_flutter: ^4.2.4
-  # webview_flutter_wkwebview: ^3.7.4
-  # webview_flutter_android: ^3.9.5
   pdfx: ^2.4.0
   internet_file: ^1.2.0
   protobuffers:
