@@ -28,7 +28,7 @@ class BookItemWidget extends StatelessWidget {
       hoverColor: Colors.white,
       borderRadius: BorderRadius.circular(5),
       overlayColor:
-          WidgetStatePropertyAll(const Color(0xFF569CD6).withOpacity(0.1)),
+          WidgetStatePropertyAll(const Color(0xFF569CD6).withAlpha(20)),
       onTap: () async {
         const prefixUrl = "https://files.lcjuves.com";
         final url = "$prefixUrl/pdf/${item.name}";
