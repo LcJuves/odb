@@ -19,10 +19,10 @@ EXTERNAL SOURCES:
     :path: Flutter/ephemeral/.symlinks/plugins/pdfx/macos
 
 SPEC CHECKSUMS:
-  device_info_plus: 5401765fde0b8d062a2f8eb65510fb17e77cf07f
+  device_info_plus: ce1b7762849d3ec103d0e0517299f2db7ad60720
   FlutterMacOS: 8f6f14fa908a6fb3fba0cd85dbd81ec4b251fb24
   pdfx: d1c406047b02acc54fe98495ae24b04fe9b4f024
 
-PODFILE CHECKSUM: 236401fc2c932af29a9fcf0e97baeeb2d750d367
+PODFILE CHECKSUM: 7eb978b976557c8c1cd717d8185ec483fd090a82
 
-COCOAPODS: 1.12.1
+COCOAPODS: 1.16.2
