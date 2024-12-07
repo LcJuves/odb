@@ -53,4 +53,4 @@ flutter build web --wasm --no-tree-shake-icons --no-native-null-assertions --no-
     cd chromium || exit
     minify_js canvaskit.js
 )
-tar -cvJf odb-web.tar.xz build/web/**
+tar -cvJf web-artifacts.tar.xz build/web/**
