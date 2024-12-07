@@ -21,7 +21,8 @@ minify_html() {
 }
 
 minify_json() {
-    bun repl -e "(async()=>await Bun.write(Bun.stdout,JSON.stringify(require('./$1'))))()" >"$1"
+    bun repl -e "(async()=>await Bun.write(Bun.stdout,JSON.stringify(require('./$1'))))()" >"$1.out"
+    mv "$1.out" "$1"
 }
 
 flutter clean
