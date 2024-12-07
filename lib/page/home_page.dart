@@ -2,9 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
 import 'package:protobuffers/books.pb.dart';
 
-import 'book_item_widget.dart';
-import 'bottom_text.dart';
-import 'title_bar.dart';
+import '../widget/book_item_widget.dart';
+import '../widget/bottom_text.dart';
+import '../widget/title_bar.dart';
 
 class HomePage extends StatelessWidget {
   const HomePage({super.key});

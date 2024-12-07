@@ -8,8 +8,8 @@ import 'package:url_launcher/url_launcher.dart';
 // import 'package:web/web.dart' as web;
 
 import 'book_item_flex_text.dart';
-import 'client_preview_book_page.dart';
-import 'windows_preview_book_page.dart';
+import '../page/client_preview_book_page.dart';
+import '../page/windows_preview_book_page.dart';
 
 class BookItem {
   final String name;
