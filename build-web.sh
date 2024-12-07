@@ -26,7 +26,6 @@ minify_json() {
 }
 
 flutter clean
-# flutter build web --no-native-null-assertions --no-web-resources-cdn --release --web-renderer html
 flutter build web --wasm --no-tree-shake-icons --no-native-null-assertions --no-web-resources-cdn --release
 (
     cd build/web || exit
