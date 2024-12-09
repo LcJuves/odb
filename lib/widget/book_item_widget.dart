@@ -33,7 +33,7 @@ class BookItemWidget extends StatelessWidget {
         const prefixUrl = "https://files.lcjuves.com";
         final url = "$prefixUrl/pdf/${item.name}";
         if (kIsWeb) {
-          await loadAnimationAndLaunch(url);
+          await webLoadAnimationAndLaunch(url);
         } else if (!Platform.isLinux && !Platform.isWindows) {
           Navigator.of(context).push(MaterialPageRoute(
             builder: (context) => ClientPreviewBookPage(previewUrl: url),
