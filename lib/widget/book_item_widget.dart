@@ -5,11 +5,12 @@ import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:url_launcher/url_launcher.dart';
+
+import '../page/client_preview_book_page.dart';
+import '../page/windows_preview_book_page.dart';
 // import 'package:web/web.dart' as web;
 
 import 'book_item_flex_text.dart';
-import '../page/client_preview_book_page.dart';
-import '../page/windows_preview_book_page.dart';
 
 class BookItem {
   final String name;
@@ -18,7 +19,7 @@ class BookItem {
 
 class BookItemWidget extends StatelessWidget {
   final BookItem item;
-  static const double edgePadding = 2.5;
+  static const double edgePadding = (18 * 0.618) / 4;
   const BookItemWidget({super.key, required this.item});
 
   @override

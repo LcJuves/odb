@@ -16,7 +16,7 @@ class TitleBar extends StatelessWidget {
           ),
         ),
         SizedBox.fromSize(
-          size: const Size.square(25),
+          size: const Size.square(30 * 0.618),
         ),
         const Flexible(
             child: Text(

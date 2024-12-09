@@ -54,26 +54,32 @@ class _BooksContainerState extends State<BooksContainer> {
     return FutureBuilder<List<BookItem>>(
       future: fetchBookItems,
       builder: (context, snapshot) {
+        if (snapshot.hasError) {
+          return Text('${snapshot.error}');
+        }
+
         if (snapshot.hasData) {
           final fetchedBookItems = snapshot.data!;
+          const goodSpacing = (40 * 0.618) / 1.2;
           return SingleChildScrollView(
-            padding: const EdgeInsets.all(20),
+            padding: const EdgeInsets.all(goodSpacing),
             child: Center(
               child: Wrap(
                   spacing: 40,
-                  runSpacing: 20,
+                  runSpacing: goodSpacing,
                   children: fetchedBookItems
                       .map((e) => BookItemWidget(item: e))
                       .toList()),
             ),
           );
-        } else if (snapshot.hasError) {
-          return Text('${snapshot.error}');
         }
 
         return const Center(
-          child: CircularProgressIndicator(
-            color: Colors.white,
+          child: SizedBox.square(
+            dimension: 60,
+            child: CircularProgressIndicator(
+              color: Colors.white,
+            ),
           ),
         );
       },
