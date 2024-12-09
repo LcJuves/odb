@@ -5,11 +5,10 @@ import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:url_launcher/url_launcher.dart';
+import 'package:web/web.dart' as web;
 
 import '../page/client_preview_book_page.dart';
 import '../page/windows_preview_book_page.dart';
-// import 'package:web/web.dart' as web;
-
 import 'book_item_flex_text.dart';
 
 class BookItem {
@@ -34,11 +33,12 @@ class BookItemWidget extends StatelessWidget {
         const prefixUrl = "https://files.lcjuves.com";
         final url = "$prefixUrl/pdf/${item.name}";
         if (kIsWeb) {
-          /* final elem = web.document.querySelector(".content");
-          elem!.setAttribute("style", "display:flex;");
-          web.window.location.href = url;
-          await Future.delayed(const Duration(seconds: 6),
-              () => elem.setAttribute("style", "display:none;")); */
+          var elem =
+              web.document.querySelector(".content") as web.HTMLDivElement?;
+          elem?.style.display = 'flex';
+          web.window.location.replace(url);
+          await Future.delayed(
+              const Duration(seconds: 6), () => elem?.style.display = 'flex');
         } else if (!Platform.isLinux && !Platform.isWindows) {
           Navigator.of(context).push(MaterialPageRoute(
             builder: (context) => ClientPreviewBookPage(previewUrl: url),
