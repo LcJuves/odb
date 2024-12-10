@@ -1,9 +1,24 @@
-import 'package:web/web.dart' as web;
+import 'package:web/web.dart';
 
 Future<void> webLoadAnimationAndLaunch(String url) async {
-  var elem = web.document.querySelector(".content") as web.HTMLDivElement?;
+  var elem = document.querySelector(".content") as HTMLDivElement?;
+  final embed = document.createElement("embed") as HTMLEmbedElement;
   elem?.style.display = 'flex';
-  web.window.location.replace(url);
-  await Future.delayed(
-      const Duration(seconds: 6), () => elem?.style.display = 'flex');
+  embed.type = "application/pdf";
+  embed.src = url;
+  embed.style.position = "absolute";
+  embed.style.width = "100%";
+  embed.style.height = "100%";
+  embed.style.left = "50%";
+  embed.style.top = "50%";
+  embed.style.transform = "translate(-50%, -50%)";
+  embed.style.overflow = "hidden";
+  embed.style.display = "none";
+  // TODO: Cancel to hidden embed pdf
+  // window.history.pushState(null, "", url);
+  document.body!.appendChild(embed);
+  await Future.delayed(const Duration(seconds: 6), () {
+    embed.style.display = 'block';
+    elem?.style.display = 'none';
+  });
 }
