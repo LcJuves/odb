@@ -9,9 +9,6 @@ Future<void> webLoadAnimationAndLaunch(String url) async {
   embed.style.position = "absolute";
   embed.style.width = "100%";
   embed.style.height = "100%";
-  embed.style.left = "50%";
-  embed.style.top = "50%";
-  embed.style.transform = "translate(-50%, -50%)";
   embed.style.overflow = "hidden";
   embed.style.display = "none";
   // TODO: Cancel to hidden embed pdf
