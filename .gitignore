@@ -195,7 +195,7 @@ gdb.setup
 gdbserver
 
 .dart_tool/
-odb-web.tar.xz
+/web-artifacts.tar.xz
 .flutter-plugins
 .flutter-plugins-dependencies
 books.pb
