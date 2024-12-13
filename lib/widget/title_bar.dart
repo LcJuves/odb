@@ -20,7 +20,7 @@ class TitleBar extends StatelessWidget {
         ),
         const Flexible(
             child: Text(
-          'Open Developer Books',
+          'Open Developer Books 🇨🇳',
           style: TextStyle(
             color: Colors.white,
             fontWeight: FontWeight.bold,
