@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:internet_file/internet_file.dart';
+import 'package:odb/constants.dart';
 import 'package:pdfx/pdfx.dart';
 
 // ignore: must_be_immutable
@@ -41,15 +42,23 @@ class _ClientPreviewBookPageState extends State<ClientPreviewBookPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.grey,
+      backgroundColor: Colors.white,
       appBar: AppBar(
+        leading: IconButton(
+            onPressed: () async => await Navigator.maybePop(context),
+            icon: const Icon(Icons.arrow_back_rounded)),
+        systemOverlayStyle: Constants.defaultSystemUiOverlayStyle.copyWith(
+          statusBarIconBrightness: Brightness.dark,
+          systemNavigationBarColor: Colors.white,
+          systemNavigationBarIconBrightness: Brightness.light,
+        ),
         title: Text(
           widget._title,
           style: const TextStyle(fontWeight: FontWeight.bold, fontSize: 15),
         ),
         actions: <Widget>[
           IconButton(
-            icon: const Icon(Icons.navigate_before),
+            icon: const Icon(Icons.navigate_before_rounded),
             onPressed: () {
               _pdfController.previousPage(
                 curve: Curves.ease,
@@ -68,7 +77,7 @@ class _ClientPreviewBookPageState extends State<ClientPreviewBookPage> {
             ),
           ),
           IconButton(
-            icon: const Icon(Icons.navigate_next),
+            icon: const Icon(Icons.navigate_next_rounded),
             onPressed: () {
               _pdfController.nextPage(
                 curve: Curves.ease,

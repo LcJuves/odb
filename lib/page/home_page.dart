@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
+import 'package:odb/constants.dart';
 import 'package:protobuffers/books.pb.dart';
 
 import '../widget/book_item_widget.dart';
@@ -13,10 +14,12 @@ class HomePage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: Colors.transparent,
-        title: const TitleBar(),
-      ),
-      backgroundColor: const Color.fromARGB(255, 30, 30, 30),
+          backgroundColor: Colors.transparent,
+          surfaceTintColor: Constants.themeColor,
+          scrolledUnderElevation: 10,
+          title: const TitleBar(),
+          systemOverlayStyle: Constants.defaultSystemUiOverlayStyle),
+      backgroundColor: Constants.themeColor,
       body: const BooksContainer(),
       bottomNavigationBar: const SafeArea(child: BottomText()),
     );
