@@ -43,6 +43,7 @@ class _ClientPreviewBookPageState extends State<ClientPreviewBookPage> {
     return Scaffold(
       backgroundColor: Colors.white,
       appBar: AppBar(
+        backgroundColor: Colors.white,
         leading: IconButton(
             onPressed: () async => await Navigator.maybePop(context),
             icon: const Icon(Icons.arrow_back_rounded)),
