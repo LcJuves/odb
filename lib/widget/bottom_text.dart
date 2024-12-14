@@ -14,7 +14,7 @@ class BottomText extends StatelessWidget {
       child: Text(
         "访问者可将本网站提供的内容或服务用于个人学习、研究或欣赏，以及其他非商业性或非盈利性用途，但同时应遵守著作权法及其他相关法律的规定，不得侵犯本网站及相关权利人的合法权利。",
         style: TextStyle(
-          color: Colors.white.withOpacity(0.4),
+          color: Colors.white.withAlpha(35),
           fontSize: 12,
         ),
         textAlign: TextAlign.center,
