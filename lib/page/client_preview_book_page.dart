@@ -3,10 +3,9 @@ import 'package:internet_file/internet_file.dart';
 import 'package:odb/constants.dart';
 import 'package:pdfx/pdfx.dart';
 
-// ignore: must_be_immutable
 class ClientPreviewBookPage extends StatefulWidget {
   final String previewUrl;
-  late String _title;
+  late final String _title;
   ClientPreviewBookPage({Key? key, required this.previewUrl})
       : super(key: key) {
     final pdfName = previewUrl.split("/").last;
