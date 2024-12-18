@@ -10,7 +10,7 @@
   position: absolute;
   width: 100%;
   height: 100%;
-  color: white;
+  color: #fff;
   background: rgb(30, 30, 30);
   z-index: 9999;
   /* display: flex; */
@@ -22,7 +22,7 @@
 
 .preloader {
   display: flex;
-  color: rgba(0, 0, 0, 0);
+  color: #0000;
   width: 17em;
   height: 16em;
   animation: tiltSpin 8s linear infinite;
@@ -48,7 +48,7 @@
   width: 1.5rem;
 }
 
-.preloader_ring:nth-child(even) {
+.preloader_ring:nth-child(2n) {
   animation-direction: reverse;
 }
 
@@ -189,9 +189,8 @@
   transform: rotateY(348deg) translateZ(7rem);
 }
 
-/* Animations */
 @keyframes tiltSpin {
-  from {
+  0% {
     transform: rotateY(0) rotateX(30deg);
   }
   to {
@@ -200,7 +199,7 @@
 }
 
 @keyframes spin {
-  from {
+  0% {
     transform: rotateY(0);
   }
   to {
