@@ -1,5 +1,9 @@
 import 'package:web/web.dart';
 
+bool isRunOnAndroidWebViewOrBrowser() {
+  return window.navigator.userAgent.toLowerCase().contains("android");
+}
+
 Future<void> webLoadAnimationAndLaunch(String url) async {
   final ua = window.navigator.userAgent.toLowerCase();
   final isAndroidWebViewOrBrowser = ua.contains("android");
